@@ -1,18 +1,7 @@
 function game(playerScore,computerScore) {
     while(playerScore<5 && computerScore<5){
-        let playerSelection= String(prompt("Rock, Paper or Scissor?"));
-
-        function makeUppercase(string){
-            let first= string.slice(0,1);
-            let rest= string.slice(1);
-            first=first.toUpperCase();
-            rest=rest.toLowerCase();
-            let result=first+rest;
-            playerSelection=result;
-        }
-        makeUppercase(playerSelection);
-
-        if(playerSelection!="Rock" && playerSelection!="Paper" && playerSelection!="Scissor"){
+        let playerSelection= String(prompt("Rock, Paper or Scissor?")).toLowerCase();
+        if(playerSelection!="rock" && playerSelection!="paper" && playerSelection!="scissor"){
             alert("Are you stupid?");
         }
         else{
@@ -21,11 +10,11 @@ function game(playerScore,computerScore) {
                 let s="";
                 let x= Math.floor(Math.random() * 3)+1;
                 if(x==1){
-                    s="Rock";
+                    s="rock";
                 }else if(x==2){
-                    s="Paper";
+                    s="paper";
                 }else if(x==3){
-                    s="Scissor";
+                    s="scissor";
                 }
                 return s;
             }
@@ -39,12 +28,12 @@ function game(playerScore,computerScore) {
                     Tie=Tie+playerSelection;
                     return(Tie);
                 }
-                else if(playerSelection=="Rock"&&computerSelection=="Scissor"||playerSelection=="Scissor"&&computerSelection=="Paper"||playerSelection=="Paper"&&computerSelection=="Rock"){
+                else if(playerSelection=="rock"&&computerSelection=="scissor"||playerSelection=="scissor"&&computerSelection=="paper"||playerSelection=="paper"&&computerSelection=="rock"){
                     Win=Win+playerSelection+" beats "+computerSelection;
                     playerScore=playerScore+1;
                     return(Win);
                 }
-                else if(playerSelection=="Rock"&&computerSelection=="Paper"||playerSelection=="Scissor"&&computerSelection=="Rock"||playerSelection=="Paper"&&computerSelection=="Scissor"){
+                else if(playerSelection=="rock"&&computerSelection=="paper"||playerSelection=="scissor"&&computerSelection=="rock"||playerSelection=="paper"&&computerSelection=="scissor"){
                     Lose=Lose+computerSelection+" beats "+playerSelection;
                     computerScore=computerScore+1;
                     return(Lose)
