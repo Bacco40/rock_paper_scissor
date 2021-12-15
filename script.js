@@ -2,7 +2,7 @@ function game(playerScore,computerScore) {
     while(playerScore<5 && computerScore<5){
         let playerSelection= String(prompt("Rock, Paper or Scissor?"));
 
-        function up(string){
+        function makeUppercase(string){
             let first= string.slice(0,1);
             let rest= string.slice(1);
             first=first.toUpperCase();
@@ -10,14 +10,14 @@ function game(playerScore,computerScore) {
             let result=first+rest;
             playerSelection=result;
         }
-        up(playerSelection);
+        makeUppercase(playerSelection);
 
         if(playerSelection!="Rock" && playerSelection!="Paper" && playerSelection!="Scissor"){
             alert("Are you stupid?");
         }
         else{
 
-            function randomSel(){
+            function randomSelection(){
                 let s="";
                 let x= Math.floor(Math.random() * 3)+1;
                 if(x==1){
@@ -29,7 +29,7 @@ function game(playerScore,computerScore) {
                 }
                 return s;
             }
-            let computerSelection= randomSel();
+            let computerSelection= randomSelection();
 
             function playRound(playerSelection,computerSelection){
                 let Win="You Win! ";
