@@ -5,8 +5,10 @@ const points=document.querySelector('#Points');
 const humanPoints= document.createElement('div');
 const computerPoints= document.createElement('div');
 const output=document.createElement('div');
+output.classList.add('out');
 humanPoints.textContent = playerScore;
 computerPoints.textContent = computerScore;
+output.textContent = "Let's see who is the best...";
 results.appendChild(output);
 points.appendChild(humanPoints);
 points.appendChild(computerPoints);
@@ -41,6 +43,7 @@ function playRound(playerSelection,computerSelection){
             computerPoints.textContent = computerScore;
             humanPoints.textContent = playerScore;
             alert("Congratulations you Won the game!")
+            return("Let's see who is the best...");
         }
         return(Win);
     }
@@ -54,6 +57,7 @@ function playRound(playerSelection,computerSelection){
             computerPoints.textContent = computerScore;
             humanPoints.textContent = playerScore;
             alert("Machines Won!!! Humanity is doomed! AH LOSERRR!!")
+            return("Let's see who is the best...");
         }
         return(Lose)
     }
@@ -66,5 +70,3 @@ buttons.forEach((button)=>{
     output.textContent=(playRound(playerSelection,computerSelection)); 
     })
 })
-
-
